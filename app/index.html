@@ -825,13 +825,14 @@ nav button.on{color:var(--navy);font-weight:800}
     <ul class="perks">
       <li>📖 Todas as trilhas devocionais completas</li>
       <li>🕊️ SOS Ansiedade com respiração guiada</li>
-      <li>✝️ Evangelho, Versículo e Salmo do dia comentados</li>
+      <li>📖 Palavra do dia, Versículo e Salmo comentados</li>
       <li>✍️ Diário de oração com pedidos respondidos</li>
       <li>📈 Acompanhamento da sua evolução e conquistas</li>
       <li>🔔 Lembrete diário no seu horário</li>
     </ul>
     <div class="price"><small class="small">Acesso completo por apenas</small><br><b>R$ 19,90</b><span class="small">/mês</span><br><small class="small">ou <b style="font-size:18px">R$ 97</b> no plano anual · economize 59%</small></div>
-    <a class="btn btn-gold btn-block" style="padding:15px;text-decoration:none" id="pw-link" href="#" target="_blank" rel="noopener">Quero continuar com acesso completo</a>
+    <a class="btn btn-gold btn-block" style="padding:15px;text-decoration:none" id="pw-link" href="#" target="_blank" rel="noopener">Plano anual · R$ 97 (R$ 8,08/mês)</a>
+    <a class="btn btn-ghost btn-block" style="padding:13px;text-decoration:none;margin-top:8px;background:#fff" id="pw-link-m" href="#" target="_blank" rel="noopener">Plano mensal · R$ 19,90</a>
     <p class="small" style="text-align:center;margin-top:10px">Pagamento seguro. Cancele quando quiser.</p>
   </div>
 </div></div>
@@ -841,7 +842,8 @@ nav button.on{color:var(--navy);font-weight:800}
 
 <script>
 /* ====== CONFIGURAÇÃO ====== */
-const CHECKOUT_URL = "https://SEU-LINK-DE-CHECKOUT-AQUI"; // troque pelo link da Kiwify/Cakto/Hotmart
+const CHECKOUT_URL = "https://pay.kiwify.com.br/vDaEDky"; // plano anual R$ 97
+const CHECKOUT_MENSAL_URL = "https://pay.kiwify.com.br/umANXb5"; // plano mensal R$ 19,90
 const TRIAL_DAYS = 7;
 
 /* ====== CONTEÚDO ====== */
@@ -1871,7 +1873,7 @@ function finishOnboarding(){const n=document.getElementById("ob-name").value.tri
  S.name=n.split(" ")[0];S.fe=S.fe||"nd";S.time=document.getElementById("ob-time").value||"07:00";S.trialStart=Date.now();markActive();save();
  document.getElementById("onboarding").classList.add("hidden");go("home");toast("Bem-vindo(a)! Sua jornada de paz começou 🙏")}
 function openPaywall(locked){const p=document.getElementById("paywall");p.classList.remove("hidden");
- document.getElementById("pw-link").href=CHECKOUT_URL;
+ document.getElementById("pw-link").href=CHECKOUT_URL;document.getElementById("pw-link-m").href=CHECKOUT_MENSAL_URL;
  document.getElementById("pw-close").classList.toggle("hidden",!!locked);
  document.getElementById("pw-title").textContent="Continue sua jornada de paz";
  document.getElementById("pw-sub").textContent="Acesso completo com 7 dias de garantia: se não gostar, devolvemos 100% do seu dinheiro."}
