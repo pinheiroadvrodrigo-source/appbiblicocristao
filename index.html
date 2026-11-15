@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diário Bíblico da Paz — Palavra do dia, Bíblia comentada e paz para o coração</title>
+<meta name="description" content="A Palavra do dia com meditação guiada, a Bíblia completa comentada, plano de leitura e devocionais para ansiedade, casal e crianças. No seu celular, sem baixar nada.">
+<meta property="og:title" content="Diário Bíblico da Paz">
+<meta property="og:description" content="15 minutos por dia com Deus: Palavra do dia, Bíblia comentada e paz para o coração.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  ===================== CONFIGURAÇÃO (edite aqui) =====================
+  1) CHECKOUT_MENSAL e CHECKOUT_ANUAL: cole os links dos checkouts da Kiwify
+     (um produto/plano de R$ 19,90 por mês e outro de R$ 97 por ano).
+  2) Os order bumps (e-books) são configurados dentro do checkout da Kiwify.
+  3) Pixel do Meta: troque SEU_PIXEL_ID pelo número do seu pixel e apague
+     as linhas de comentário em volta do bloco do pixel (mais abaixo).
+  Os parâmetros da URL (utm_..., src, sck, afiliado) são repassados ao
+  checkout automaticamente, para não perder o rastreio de anúncios e afiliados.
+  =====================================================================
+-->
+<script>
+const CHECKOUT_MENSAL = "https://pay.kiwify.com.br/SEU-CHECKOUT-MENSAL";
+const CHECKOUT_ANUAL  = "https://pay.kiwify.com.br/SEU-CHECKOUT-ANUAL";
+</script>
+<!-- PIXEL DO META (ative apagando esta linha e a linha "FIM PIXEL")
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','SEU_PIXEL_ID');fbq('track','PageView');
+</script>
+FIM PIXEL -->
+<style>
+:root{--bg:#F7F2EA;--card:#FFFDF9;--ink:#0F172A;--muted:#374151;--line:#E8DFD1;--navy:#1E3A5F;--navy2:#2C5282;--gold:#C8963E;--gold2:#9A6B1E;--goldsoft:#F4E6CC;--green:#3F7D5C;--greensoft:#DDEFE4;--rose:#B4546A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:18px;line-height:1.6}
+h1,h2,h3,.serif{font-family:Lora,Georgia,serif}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:560px;margin:0 auto;padding:0 18px}
+.hidden{display:none!important}
+.btn{display:block;width:100%;border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:19px;padding:18px 16px;border-radius:16px;text-align:center;text-decoration:none}
+.btn-gold{background:linear-gradient(180deg,#D6A64A,#B8862F);color:#fff;box-shadow:0 8px 22px rgba(184,134,47,.35)}
+.btn-gold:active{transform:scale(.98)}
+.btn small{display:block;font-weight:600;font-size:13.5px;opacity:.95;margin-top:2px}
+.label{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--gold2)}
+section{padding:42px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+/* topo */
+.top{background:var(--navy);color:#fff;text-align:center;font-size:14px;font-weight:600;padding:9px 12px}
+/* QUIZ */
+#quiz{min-height:100vh;padding:26px 0 40px}
+.q-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0 22px}
+.q-prog i{display:block;height:100%;background:var(--gold);width:0;transition:width .4s}
+.q-step{font-size:14px;font-weight:700;color:var(--muted)}
+.q h2{font-size:27px;line-height:1.25;margin-bottom:18px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px;margin-bottom:10px;font-family:inherit;font-size:18px;font-weight:600;color:var(--ink);text-align:left;cursor:pointer}
+.opt span{font-size:26px}
+.opt:active,.opt.sel{border-color:var(--navy);background:#E9EEF5}
+.intro h1{font-size:31px;line-height:1.2;margin:10px 0 12px}
+.intro p{color:var(--muted)}
+.intro .mini{display:flex;gap:16px;justify-content:center;font-size:14px;color:var(--muted);margin-top:12px;flex-wrap:wrap}
+.loading{text-align:center;padding-top:60px}
+.spin{width:64px;height:64px;border-radius:50%;border:6px solid var(--line);border-top-color:var(--gold);margin:0 auto 22px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.lsteps p{color:var(--muted);margin:6px 0;opacity:.35;transition:opacity .3s}
+.lsteps p.on{opacity:1;color:var(--ink);font-weight:600}
+/* RESULTADO / VENDAS */
+.result{background:linear-gradient(135deg,#1E3A5F,#2C5282);color:#fff;border:none}
+.result .label{color:#FFD98E}
+.result h2{font-size:25px;line-height:1.25;margin:6px 0 10px}
+.result ul{list-style:none;margin:10px 0}
+.result li{padding:6px 0;font-size:17px}
+.hero h1{font-size:32px;line-height:1.18;margin:10px 0 14px}
+.hero p.sub{font-size:19px;color:var(--muted)}
+.phone{width:240px;margin:24px auto 0;border-radius:34px;border:9px solid #111;box-shadow:0 20px 50px rgba(15,23,42,.25);overflow:hidden;background:#fff}
+.phones{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 16px;margin:0 -18px;padding-left:18px}
+.phones figure{flex:none;width:220px;scroll-snap-align:center}
+.phones .phone{width:220px;margin:0}
+.phones figcaption{font-size:15px;font-weight:700;text-align:center;margin-top:10px}
+.pain p{margin-bottom:14px}
+.pain .q{font-family:Lora,serif;font-size:21px;font-style:italic;color:var(--navy);border-left:4px solid var(--gold);padding-left:14px;margin:18px 0}
+h2.t{font-size:28px;line-height:1.22;margin:8px 0 16px}
+.feat{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.feat:last-child{border-bottom:none}
+.feat .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:26px;flex:none;background:var(--goldsoft)}
+.feat b{display:block;font-size:19px;margin-bottom:2px}
+.feat p{font-size:16.5px;color:var(--muted)}
+.steps{counter-reset:s}
+.steps li{list-style:none;position:relative;padding:0 0 18px 52px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
+.steps b{display:block}
+.offer{border:2px solid var(--gold);box-shadow:0 14px 40px rgba(200,150,62,.18)}
+.offer ul{list-style:none;margin:12px 0 18px}
+.offer li{padding:9px 0;border-bottom:1px dashed var(--line);font-size:17px}
+.offer li:last-child{border-bottom:none}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 8px}
+.plan-hint{text-align:center;font-size:14.5px;color:var(--muted);margin-bottom:14px}
+.plan{position:relative;display:block;width:100%;text-align:center;background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px;font-family:inherit;cursor:pointer;color:var(--ink)}
+.plan.on{border-color:var(--gold);background:#FFF8EA;box-shadow:0 0 0 3px rgba(200,150,62,.18)}
+.plan b{display:block;font-size:17px}
+.plan .pv{display:block;white-space:nowrap;font-family:Lora,serif;font-size:27px;font-weight:700;color:var(--navy);line-height:1.15;margin-top:2px}
+.plan .pv small{font-family:Inter,sans-serif;font-size:15px;color:var(--muted);font-weight:600}
+.plan .ps{display:block;font-size:14.5px;color:var(--muted)}
+.plan .tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--green);color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:99px;letter-spacing:.04em}
+.plan{padding-top:20px;padding-bottom:40px}
+.plan::before{content:"";position:absolute;left:50%;bottom:10px;width:22px;height:22px;margin-left:-11px;border-radius:50%;border:2px solid var(--line);background:#fff}
+.plan.on::before{border-color:var(--gold);background:radial-gradient(circle,var(--gold) 45%,#fff 50%)}
+.price{text-align:center;margin:8px 0 16px}
+.price b{font-family:Lora,serif;font-size:52px;color:var(--navy);line-height:1}
+.price small{display:block;font-size:15px;color:var(--muted);margin-top:6px}
+.trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin-top:12px}
+.guar{display:flex;gap:16px;align-items:center}
+.seal{width:92px;height:92px;border-radius:50%;flex:none;background:radial-gradient(circle,#FFE7B0,#C8963E);display:grid;place-items:center;text-align:center;font-weight:800;color:#5B3A0E;font-size:13px;line-height:1.1;border:4px dashed #fff;box-shadow:0 0 0 3px #C8963E}
+.seal b{display:block;font-size:30px;font-family:Lora,serif}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;font-size:17.5px;list-style:none}
+.faq summary::after{content:" +";color:var(--gold)}
+.faq details[open] summary::after{content:" –"}
+.faq details p{margin-top:8px;color:var(--muted);font-size:16.5px}
+.note{font-size:13.5px;color:var(--muted);text-align:center;margin-top:24px}
+footer{text-align:center;font-size:13.5px;color:var(--muted);padding:30px 18px 110px}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(247,242,234,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);z-index:20;transform:translateY(120%);transition:transform .3s}
+.sticky.show{transform:none}
+.sticky .btn{max-width:560px;margin:0 auto;padding:14px;font-size:17px}
+</style>
+</head>
+<body>
+
+<!-- ===================== QUIZ ===================== -->
+<div id="quiz">
+ <div class="wrap">
+  <div id="q-intro" class="intro" style="text-align:center;padding-top:10px">
+   <div style="font-size:52px">🕊️</div>
+   <div class="label" style="margin-top:8px">Diário Bíblico da Paz</div>
+   <h1>Descubra o plano ideal para você ler a Bíblia e encontrar paz</h1>
+   <p>Responda 5 perguntas rápidas. No final, você recebe um plano de 15 minutos por dia feito para o seu momento.</p>
+   <button class="btn btn-gold" style="margin-top:22px" onclick="startQuiz()">Começar agora<small>leva menos de 1 minuto</small></button>
+   <div class="mini"><span>✓ Grátis para responder</span><span>✓ Sem cadastro</span></div>
+  </div>
+  <div id="q-box" class="hidden">
+   <div class="q-step" id="q-step"></div>
+   <div class="q-prog"><i id="q-bar"></i></div>
+   <div class="q" id="q-q"></div>
+  </div>
+  <div id="q-load" class="loading hidden">
+   <div class="spin"></div>
+   <h2 class="serif" style="font-size:24px;margin-bottom:14px">Montando o seu plano…</h2>
+   <div class="lsteps"><p id="ls1">Analisando suas respostas</p><p id="ls2">Escolhendo as leituras para o seu momento</p><p id="ls3">Preparando o seu caminho de 15 minutos por dia</p></div>
+  </div>
+ </div>
+</div>
+
+<!-- ===================== PÁGINA DE VENDAS ===================== -->
+<div id="sales" class="hidden">
+ <div class="top">🕊️ Seu plano está pronto · veja abaixo</div>
+
+ <section style="padding-top:26px"><div class="wrap">
+  <div class="card result" id="result"></div>
+ </div></section>
+
+ <section class="hero" style="padding-top:6px"><div class="wrap" style="text-align:center">
+  <div class="label">O app que vai te acompanhar</div>
+  <h1>15 minutos por dia com Deus, mesmo quando a cabeça não para</h1>
+  <p class="sub">Para católicos e evangélicos: a Palavra do dia com meditação guiada, a Bíblia completa comentada e devocionais para os seus momentos difíceis. Tudo no seu celular, sem baixar nada.</p>
+  <div class="phone"><img src="home.jpg" alt="Tela inicial do app Diário Bíblico da Paz" width="390" height="780"></div>
+  <a class="btn btn-gold cta" style="margin-top:28px" href="#oferta">Quero começar hoje<small>R$ 19,90 por mês ou R$ 97 por ano</small></a>
+ </div></section>
+
+ <section class="pain" style="background:#fff"><div class="wrap">
+  <div class="label">Talvez você se reconheça</div>
+  <h2 class="t">Você quer estar mais perto de Deus, mas a rotina sempre ganha</h2>
+  <p>Você abre a Bíblia com vontade. Lê um pedaço, não entende direito e fecha. No outro dia, esquece.</p>
+  <p>À noite, a cabeça não desliga. É conta, é família, é preocupação com o amanhã.</p>
+  <p>Você sabe que a Palavra traz paz. Só falta um caminho simples para seguir todo dia.</p>
+  <p class="q">“Eu não preciso de mais uma obrigação. Preciso de alguém que me mostre por onde começar.”</p>
+  <p>Foi pensando exatamente nisso que o <b>Diário Bíblico da Paz</b> foi criado.</p>
+ </div></section>
+
+ <section><div class="wrap">
+  <div class="label">Como funciona</div>
+  <h2 class="t">Você abre o app e ele te diz exatamente o que fazer hoje</h2>
+  <ol class="steps">
+   <li><b>Palavra do dia</b>Uma passagem dos Evangelhos e um Salmo, já prontos para ler.</li>
+   <li><b>Meditação em 5 passos</b>Leitura, meditação, oração, silêncio e ação, de um jeito simples.</li>
+   <li><b>Um passo na sua missão</b>Você avança na leitura da Bíblia inteira e vê sua evolução no calendário.</li>
+  </ol>
+  <div class="phones">
+   <figure><div class="phone"><img src="lit.jpg" alt="Palavra do dia com leitura completa" loading="lazy" width="390" height="780"></div><figcaption>Palavra do dia</figcaption></figure>
+   <figure><div class="phone"><img src="mis.jpg" alt="Missão Bíblia com contagem de dias" loading="lazy" width="390" height="780"></div><figcaption>Missão Bíblia com prazo</figcaption></figure>
+   <figure><div class="phone"><img src="mom.jpg" alt="Meu momento: devocional para ansiedade" loading="lazy" width="390" height="780"></div><figcaption>Meu momento</figcaption></figure>
+   <figure><div class="phone"><img src="bib.jpg" alt="Bíblia com marca-texto e anotações" loading="lazy" width="390" height="780"></div><figcaption>Bíblia com marca-texto</figcaption></figure>
+  </div>
+  <p style="text-align:center;font-size:14px;color:var(--muted)">Arraste para o lado para ver as telas →</p>
+ </div></section>
+
+ <section style="background:#fff"><div class="wrap">
+  <div class="label">Tudo o que você recebe</div>
+  <h2 class="t">Um app completo para sua vida de fé</h2>
+  <div class="feat"><div class="ic">📖</div><div><b>Palavra do dia</b><p>Uma passagem dos Evangelhos e um Salmo com o texto completo e explicado, todos os dias.</p></div></div>
+  <div class="feat"><div class="ic">🕯️</div><div><b>Meditação em 5 passos</b><p>Um caminho simples para orar com a Palavra, mesmo sem experiência.</p></div></div>
+  <div class="feat"><div class="ic">🤝</div><div><b>Para católicos e evangélicos</b><p>O app se adapta à sua caminhada de fé. Quem é católico vê também a Liturgia diária completa.</p></div></div>
+  <div class="feat"><div class="ic">📖</div><div><b>Bíblia completa comentada</b><p>Os 66 livros, com explicação de cada livro: quem escreveu, quando e qual a mensagem.</p></div></div>
+  <div class="feat"><div class="ic">🎯</div><div><b>Missão Bíblia</b><p>Leia a Bíblia inteira com prazo, metas, níveis e a contagem de dias que faltam.</p></div></div>
+  <div class="feat"><div class="ic">🗓️</div><div><b>Planos de leitura</b><p>Bíblia em 1 ano, Novo Testamento em 90 dias e Evangelhos em 30 dias, com cronograma pronto.</p></div></div>
+  <div class="feat"><div class="ic">💛</div><div><b>Meu momento</b><p>Ansiedade, tristeza, cansaço, medo, problemas em casa: escolha como está e receba uma Palavra para hoje.</p></div></div>
+  <div class="feat"><div class="ic">🕊️</div><div><b>SOS ansiedade</b><p>Respiração guiada com versículos, para os momentos em que o coração dispara.</p></div></div>
+  <div class="feat"><div class="ic">💑</div><div><b>Modo Casal</b><p>7 encontros para fazer a dois, com pergunta para conversar e desafio do casal.</p></div></div>
+  <div class="feat"><div class="ic">🧒</div><div><b>Modo Kids</b><p>Histórias bíblicas com perguntas e atividades por idade, para fazer com seus filhos.</p></div></div>
+  <div class="feat"><div class="ic">🖍️</div><div><b>Marca-texto e anotações</b><p>Pinte versículos, coloque etiquetas, escreva o que Deus falou com você e anexe fotos.</p></div></div>
+  <div class="feat"><div class="ic">✍️</div><div><b>Diário de oração e evolução</b><p>Registre pedidos e orações respondidas, e acompanhe sua constância no calendário.</p></div></div>
+ </div></section>
+
+ <section id="oferta"><div class="wrap">
+  <div class="card offer">
+   <div class="label" style="text-align:center">Acesso completo</div>
+   <h2 class="t" style="text-align:center;margin-bottom:6px">Diário Bíblico da Paz</h2>
+   <ul>
+    <li>✅ Palavra do dia com meditação guiada</li>
+    <li>✅ Para católicos e evangélicos</li>
+    <li>✅ Bíblia completa comentada</li>
+    <li>✅ Missão Bíblia e planos de leitura</li>
+    <li>✅ Meu momento e SOS ansiedade</li>
+    <li>✅ Modo Casal e Modo Kids</li>
+    <li>✅ Marca-texto, anotações e diário de oração</li>
+    <li>✅ Funciona em qualquer celular, sem baixar da loja</li>
+   </ul>
+   <div class="plans">
+    <button class="plan" data-plan="mensal" onclick="setPlan('mensal')"><b>Mensal</b><span class="pv">R$ 19,90</span><span class="ps">por mês<br>cancele quando quiser</span></button>
+    <button class="plan on" data-plan="anual" onclick="setPlan('anual')"><span class="tag">Economize 59%</span><b>Anual</b><span class="pv">R$ 97</span><span class="ps">por ano<br>= R$ 8,08 por mês</span></button>
+   </div>
+   <p class="plan-hint">Toque no plano que você prefere. Os dois liberam o app completo.</p>
+   <a class="btn btn-gold cta" href="#" data-checkout><span class="cta-t">Quero o plano anual · R$ 97</span><small>acesso liberado logo após o pagamento</small></a>
+   <div class="trust"><span>🔒 Pagamento seguro</span><span>💳 Cartão ou Pix</span><span>↩️ 7 dias de garantia</span></div>
+  </div>
+ </div></section>
+
+ <section style="background:#fff"><div class="wrap">
+  <div class="guar">
+   <div class="seal"><span><b>7</b>DIAS DE<br>GARANTIA</span></div>
+   <div><h3 style="font-size:22px;margin-bottom:6px">Risco zero para você</h3><p style="color:var(--muted);font-size:16.5px">Use o app por 7 dias. Se não gostar, peça o reembolso e devolvemos 100% do valor, sem perguntas.</p></div>
+  </div>
+ </div></section>
+
+ <section class="faq"><div class="wrap">
+  <div class="label">Dúvidas frequentes</div>
+  <h2 class="t">Perguntas que as pessoas fazem</h2>
+  <details><summary>Preciso baixar alguma coisa?</summary><p>Não. O app abre pelo navegador do celular. Você pode colocar um atalho na tela inicial e ele fica igual a um aplicativo.</p></details>
+  <details><summary>Funciona no iPhone e no Android?</summary><p>Sim. Funciona em qualquer celular, tablet ou computador com internet.</p></details>
+  <details><summary>Como recebo o acesso?</summary><p>Logo após o pagamento você recebe o link de acesso no e-mail da compra.</p></details>
+  <details><summary>Eu nunca li a Bíblia. É para mim?</summary><p>Sim. O app foi feito para quem não sabe por onde começar: explica cada livro e diz exatamente o que ler a cada dia.</p></details>
+  <details><summary>É para católico ou evangélico?</summary><p>Para os dois. No primeiro acesso você diz qual é a sua caminhada de fé e o app se adapta a você. Quem é católico vê também a Liturgia diária completa. A Bíblia, os devocionais e os planos de leitura servem para qualquer cristão.</p></details>
+  <details><summary>Quanto tempo por dia preciso?</summary><p>De 10 a 15 minutos já fazem diferença. Você escolhe o seu ritmo.</p></details>
+  <details><summary>Qual plano escolher?</summary><p>O plano anual sai por R$ 97 no ano, o equivalente a R$ 8,08 por mês. O mensal custa R$ 19,90 e pode ser cancelado quando quiser. Os dois liberam exatamente o mesmo app completo.</p></details>
+  <details><summary>Posso cancelar quando quiser?</summary><p>Sim. Sem multa e sem burocracia. E nos primeiros 7 dias você tem garantia de reembolso total.</p></details>
+  <details><summary>O app trata ansiedade?</summary><p>O app é um apoio espiritual e não substitui o acompanhamento de médicos ou psicólogos. Se precisar, procure ajuda profissional. Em crise, ligue 188 (CVV).</p></details>
+  <a class="btn btn-gold cta" style="margin-top:22px" href="#" data-checkout>Quero começar minha jornada de paz</a>
+ </div></section>
+
+ <footer>
+  <p><b>Diário Bíblico da Paz</b></p>
+  <p style="margin-top:6px">Texto bíblico: tradução Bíblia Livre. Liturgia diária (opção para católicos) de acordo com o calendário litúrgico.</p>
+  <p style="margin-top:6px">Este produto não substitui acompanhamento médico ou psicológico. Resultados variam de pessoa para pessoa.</p>
+  <p style="margin-top:10px">Este site não faz parte do Facebook ou da Meta. Facebook é marca registrada da Meta Platforms, Inc.</p>
+  <p style="margin-top:10px">{{preencher: nome da empresa ou responsável · CNPJ/CPF · e-mail de suporte}}</p>
+ </footer>
+ <div class="sticky" id="sticky"><a class="btn btn-gold" href="#oferta">Ver planos · R$ 19,90/mês ou R$ 97/ano</a></div>
+</div>
+
+<script>
+/* ===== Quiz ===== */
+const QS=[
+ {q:"Como você tem se sentido nos últimos dias?",k:"feel",o:[["😟","Ansioso(a), a cabeça não para","ans"],["😮‍💨","Cansado(a) e sem forças","cans"],["😢","Triste ou desanimado(a)","trist"],["🙂","Bem, mas quero crescer na fé","fe"]]},
+ {q:"Com que frequência você lê a Bíblia hoje?",k:"freq",o:[["🙈","Quase nunca","nunca"],["📖","Às vezes, sem constância","as"],["🔥","Quase todo dia","dia"]]},
+ {q:"O que mais te atrapalha na leitura da Bíblia?",k:"bar",o:[["🧭","Não sei por onde começar","comeco"],["🤔","Leio, mas não entendo","entender"],["⏰","Falta tempo na rotina","tempo"],["😴","Começo e acabo desistindo","desisto"]]},
+ {q:"O que você mais quer neste momento?",k:"want",o:[["🕊️","Paz e menos ansiedade","paz"],["📚","Entender a Bíblia de verdade","biblia"],["👨‍👩‍👧","Fortalecer minha família ou casamento","familia"],["🧒","Ensinar a fé aos meus filhos","filhos"]]},
+ {q:"Quanto tempo por dia você consegue separar?",k:"time",o:[["⏱️","5 minutos","5"],["🕐","10 a 15 minutos","15"],["⌛","20 minutos ou mais","20"]]}
+];
+const A={};let qi=0;
+const STD=["ViewContent","InitiateCheckout","Lead"];
+const track=(ev,data)=>{try{if(window.fbq)fbq(STD.includes(ev)?"track":"trackCustom",ev,data||{})}catch(e){}};
+function startQuiz(){document.getElementById("q-intro").classList.add("hidden");document.getElementById("q-box").classList.remove("hidden");track("QuizInicio");showQ()}
+function showQ(){const Q=QS[qi];document.getElementById("q-step").textContent="Pergunta "+(qi+1)+" de "+QS.length;
+ document.getElementById("q-bar").style.width=((qi)/QS.length*100)+"%";
+ document.getElementById("q-q").innerHTML=`<h2>${Q.q}</h2>`+Q.o.map(o=>`<button class="opt" onclick="pick('${o[2]}',this)"><span>${o[0]}</span>${o[1]}</button>`).join("");window.scrollTo(0,0)}
+function pick(v,el){el.classList.add("sel");A[QS[qi].k]=v;setTimeout(()=>{qi++;if(qi<QS.length)showQ();else finish()},220)}
+function finish(){document.getElementById("q-bar").style.width="100%";document.getElementById("q-box").classList.add("hidden");document.getElementById("q-load").classList.remove("hidden");track("QuizFim",A);
+ ["ls1","ls2","ls3"].forEach((id,i)=>setTimeout(()=>document.getElementById(id).classList.add("on"),500+i*800));
+ setTimeout(showSales,3200)}
+function plan(){const feel={ans:"a ansiedade",cans:"o cansaço",trist:"a tristeza",fe:"o desejo de crescer na fé"}[A.feel]||"o seu momento";
+ const bar={comeco:"um caminho pronto, que diz exatamente o que ler a cada dia",entender:"a Bíblia comentada livro por livro e o Evangelho explicado todos os dias",tempo:"leituras curtas e organizadas, que cabem na sua rotina",desisto:"metas, calendário de constância e uma missão com contagem de dias para você não desistir"}[A.bar]||"um caminho simples";
+ const want={paz:["🕊️ Meu momento e SOS ansiedade","para os dias em que o coração aperta"],biblia:["📖 Bíblia comentada e Missão Bíblia","para entender toda a história sagrada"],familia:["💑 Modo Casal","7 encontros para fortalecer a família"],filhos:["🧒 Modo Kids","histórias e atividades para fazer com seus filhos"]}[A.want]||["📖 Palavra do dia","para começar o dia com Deus"];
+ const mins=A.time==="5"?"5 minutos":A.time==="20"?"20 minutos":"15 minutos";
+ const pl=A.freq==="dia"?"Bíblia em 1 ano":A.time==="5"?"Os 4 Evangelhos em 30 dias":"Novo Testamento em 90 dias";
+ return{feel,bar,want,mins,pl}}
+function showSales(){const P=plan();
+ document.getElementById("result").innerHTML=`<div class="label">✓ Seu plano personalizado</div><h2>Seu caminho para vencer ${P.feel} com a Palavra, em ${P.mins} por dia</h2>
+ <p style="opacity:.92;font-size:17px">Pelas suas respostas, o que vai fazer diferença para você é ${P.bar}.</p>
+ <ul><li>📖 <b>Todo dia:</b> Palavra do dia com meditação guiada</li><li>🗓️ <b>Plano indicado:</b> ${P.pl}</li><li>${P.want[0].split(" ")[0]} <b>${P.want[0].slice(P.want[0].indexOf(" ")+1)}:</b> ${P.want[1]}</li></ul>
+ <a class="btn btn-gold cta" href="#oferta" style="margin-top:8px">Ver como acessar meu plano</a>`;
+ document.getElementById("quiz").classList.add("hidden");document.getElementById("sales").classList.remove("hidden");window.scrollTo(0,0);track("ViewContent")}
+/* ===== Checkout com parâmetros (UTM, afiliado) ===== */
+let PLAN="anual";
+function checkoutHref(){const base=PLAN==="anual"?CHECKOUT_ANUAL:CHECKOUT_MENSAL;try{const u=new URL(base),q=new URLSearchParams(location.search);q.forEach((v,k)=>{if(!u.searchParams.has(k))u.searchParams.set(k,v)});return u.toString()}catch(e){return base}}
+function setPlan(p){PLAN=p;document.querySelectorAll(".plan").forEach(b=>b.classList.toggle("on",b.dataset.plan===p));
+ document.querySelectorAll("[data-checkout]").forEach(a=>a.href=checkoutHref());document.querySelectorAll(".cta-t").forEach(e=>e.textContent=p==="anual"?"Quero o plano anual · R$ 97":"Quero o plano mensal · R$ 19,90")}
+document.querySelectorAll("[data-checkout]").forEach(a=>{a.addEventListener("click",()=>track("InitiateCheckout",{value:PLAN==="anual"?97:19.9,currency:"BRL"}))});setPlan("anual");
+/* pular o quiz: adicione ?direto=1 ao link (ex.: para afiliados que já aquecem o público) */
+if(new URLSearchParams(location.search).get("direto")==="1")showSales2();
+function showSales2(){A.feel="ans";A.bar="comeco";A.want="paz";A.time="15";A.freq="as";showSales()}
+/* barra fixa de compra */
+addEventListener("scroll",()=>{const s=document.getElementById("sticky");if(!document.getElementById("sales").classList.contains("hidden"))s.classList.toggle("show",scrollY>700)});
+</script>
+</body>
+</html>
