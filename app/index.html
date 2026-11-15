@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <title>Diário Bíblico da Paz — Orações, Devocional e Vida sem Ansiedade</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -431,13 +431,35 @@ nav button.on{color:var(--navy);font-weight:800}
 .cal-nav b{font-family:Lora,serif;font-size:20px}
 .cal-leg{display:flex;gap:14px;margin-top:10px;font-size:14px;color:#374151}
 .cal-leg i{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:5px}
+
+/* ===== ajustes: texto 20% menor, grade de quadrados, estabilidade ===== */
+html,body{overflow-x:hidden;max-width:100%}
+body{zoom:.8}
+.overlay{overflow-x:hidden;overscroll-behavior:contain}
+input,select,textarea{font-size:20px!important;max-width:100%}
+img,video,svg{max-width:100%}
+.top{flex-wrap:wrap;gap:8px}
+.top .hello{flex:1 1 auto;min-width:0}
+.top .hello h1{white-space:nowrap}
+.top>div:last-child{margin-left:auto}
+.streak,.zctl button{white-space:nowrap}
+.zctl{display:flex;border:1.5px solid var(--line);border-radius:99px;overflow:hidden;background:#fff}
+.zctl button{border:none;background:none;font-weight:800;font-size:16px;padding:7px 11px;color:var(--navy);cursor:pointer}
+.zctl button+button{border-left:1.5px solid var(--line);font-size:19px}
+.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:8px}
+.tgrid .tile{flex-direction:column;align-items:flex-start;justify-content:flex-start;aspect-ratio:1/1;margin:0;padding:14px;gap:10px;overflow:hidden;min-width:0}
+.tgrid .tile .chev{display:none}
+.tgrid .tile-ic{width:50px;height:50px;font-size:25px}
+.tgrid .tile-t{width:100%}
+.tgrid .tile-t b{font-size:19px;line-height:1.2}
+.tgrid .tile-t small{font-size:15px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 </style>
 </head>
 <body>
 <div class="app" id="main">
   <div class="top">
     <div class="hello"><small id="greet-time">Bom dia</small><h1 id="greet-name">Olá!</h1></div>
-    <div style="display:flex;gap:8px;align-items:center"><div class="streak" title="Dias seguidos">🔥 <span id="streak">0</span></div><button class="streak" id="logout-btn" onclick="logout()">↪ Sair</button></div>
+    <div style="display:flex;gap:8px;align-items:center"><div class="zctl" aria-label="Tamanho do texto"><button onclick="zoomStep(-1)" aria-label="Diminuir texto">A−</button><button onclick="zoomStep(1)" aria-label="Aumentar texto">A+</button></div><div class="streak" title="Dias seguidos">🔥 <span id="streak">0</span></div><button class="streak" id="logout-btn" onclick="logout()">↪ Sair</button></div>
   </div>
 
   <!-- HOME -->
@@ -450,23 +472,29 @@ nav button.on{color:var(--navy);font-weight:800}
 
     <h2 class="home-h" id="h-lit">📖 Palavra do dia</h2>
     <p class="small" id="t-sem" style="margin:-4px 0 10px"></p>
+    <div class="tgrid">
     <button class="tile" id="tile-l1" onclick="openWord('l1')"><span class="tile-ic" style="background:#E1E9F4">📜</span><span class="tile-t"><b>1ª Leitura</b><small id="t-l1"></small></span><span class="chev">›</span></button>
     <button class="tile" onclick="openWord('s')"><span class="tile-ic" style="background:var(--gold-soft)">🎵</span><span class="tile-t"><b id="t-s-title">Salmo do dia</b><small id="t-s"></small></span><span class="chev">›</span></button>
     <button class="tile hidden" id="tile-l2" onclick="openWord('l2')"><span class="tile-ic" style="background:#E1E9F4">📜</span><span class="tile-t"><b>2ª Leitura</b><small id="t-l2"></small></span><span class="chev">›</span></button>
     <button class="tile" onclick="openWord('g')"><span class="tile-ic" style="background:#F6DFE4">✝️</span><span class="tile-t"><b id="t-g-title">Leitura do dia</b><small id="t-g"></small></span><span class="chev">›</span></button>
+    </div>
 
     <h2 class="home-h">☀️ Para o seu dia</h2>
+    <div class="tgrid">
     <button class="tile" onclick="openWord('v')"><span class="tile-ic" style="background:var(--gold-soft)">📖</span><span class="tile-t"><b>Versículo do dia</b><small id="t-v"></small></span><span class="chev">›</span></button>
     <button class="tile" onclick="openWord('o')"><span class="tile-ic" style="background:var(--green-soft)">🙏</span><span class="tile-t"><b id="t-o-title">Oração da manhã</b><small>Uma oração guiada para o seu momento</small></span><span class="chev">›</span></button>
 
     <button class="tile" onclick="go('mission')" style="background:linear-gradient(135deg,#FFF8EA,#F4E6CC);border-color:#EBD6AE"><span class="tile-ic" style="background:#fff">🎯</span><span class="tile-t"><b>Missão Bíblia</b><small id="t-mis">Leia a Bíblia inteira e entenda o livro sagrado</small></span><span class="chev">›</span></button>
     <button class="tile" onclick="go('plan')"><span class="tile-ic dbadge"><small id="tp-m">HOJE</small><b id="tp-d">•</b></span><span class="tile-t"><b>Leitura da Bíblia de hoje</b><small id="t-plan">Plano organizado para ler a Bíblia toda</small></span><span class="chev">›</span></button>
+    </div>
 
     <h2 class="home-h">💛 Cuidando de você</h2>
+    <div class="tgrid">
     <button class="tile" onclick="go('moment')" style="background:linear-gradient(135deg,#FFF8EA,#FCE9D2);border-color:#F1D3A8"><span class="tile-ic" style="background:#fff">💛</span><span class="tile-t"><b>Meu momento</b><small>Conte como você está e receba um devocional</small></span><span class="chev">›</span></button>
     <button class="tile" onclick="go('casal')"><span class="tile-ic" style="background:#F6DFE4">💑</span><span class="tile-t"><b>Modo Casal</b><small>Devocionais para fazer a dois</small></span><span class="chev">›</span></button>
     <button class="tile" onclick="go('kids')"><span class="tile-ic" style="background:#FFE9D6">🧒</span><span class="tile-t"><b>Modo Kids</b><small>Histórias bíblicas e atividades com seu filho</small></span><span class="chev">›</span></button>
     <button class="tile tile-lav" onclick="go('sos')"><span class="tile-ic" style="background:rgba(255,255,255,.2)">🕊️</span><span class="tile-t"><b>Sentindo ansiedade?</b><small>Respiração guiada com a Palavra, em 1 minuto</small></span><span class="chev">›</span></button>
+    </div>
     <div class="card">
       <div class="label">Como está seu coração hoje?</div>
       <div class="moods" id="moods"></div>
@@ -770,7 +798,7 @@ nav button.on{color:var(--navy);font-weight:800}
     </div>
     <div class="card">
       <div class="label">Tamanho da letra</div>
-      <div class="fsbtns" id="fsbtns"><button data-fs="0" onclick="setFs(0)" style="font-size:15px">A</button><button data-fs="1" onclick="setFs(1)" style="font-size:19px">A+</button><button data-fs="2" onclick="setFs(2)" style="font-size:23px">A++</button></div>
+      <div class="fsbtns" id="fsbtns"><button data-fs="0" onclick="setFs(0)" style="font-size:15px">A</button><button data-fs="2" onclick="setFs(2)" style="font-size:19px">A+</button><button data-fs="4" onclick="setFs(4)" style="font-size:23px">A++</button></div>
     </div>
     <div class="card">
       <div class="label">Lembrete diário</div>
@@ -811,7 +839,7 @@ nav button.on{color:var(--navy);font-weight:800}
     </div>
   </div>
   <div class="field"><label>Melhor horário para seu momento com Deus</label><input type="time" id="ob-time" value="07:00"></div>
-  <button class="btn btn-gold btn-block" style="padding:15px;font-size:15px" onclick="finishOnboarding()">Começar minha jornada</button>
+  <button class="btn btn-gold btn-block" style="padding:16px;font-size:19px" onclick="finishOnboarding()">Começar minha jornada</button>
   <p class="small" style="text-align:center;margin-top:10px">Seu acesso está liberado. Que Deus abençoe sua caminhada 🙏</p>
 </div></div>
 
@@ -1391,7 +1419,7 @@ let S;
 const KEY="pazdiaria_v1";
 function load(){try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){S=null}
  if(!S)S={name:"",goal:"ansiedade",time:"07:00",trialStart:null,done:{},listened:{},moods:[],journal:[],days:[],paid:false};
- if(S.music===undefined)S.music=true;if(S.fs===undefined)S.fs=0}
+ if(S.music===undefined)S.music=true;if(S.fs===undefined)S.fs=0;if(S.zi===undefined)S.zi=({0:0,1:2,2:4})[S.fs]||0}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 const ymd=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 const today=()=>ymd(new Date());
@@ -1858,10 +1886,12 @@ function renderLib(){const today=new Date().getDate()-1;
  document.getElementById("lib-list").innerHTML=L.map(x=>`<div class="acc ${x.i===today?"open":""}"><button onclick="acc(this)"><span><small class="small" style="display:block;font-weight:600;color:var(--gold)">Dia ${x.i+1}${x.i===today?" · HOJE":""}</small>${esc(x.h)}</span></button><div class="body"><p class="serif" style="font-style:italic;color:var(--navy);font-size:19px">“${esc(x.o.v)}”</p>${libMode==="p"?`<p class="small">📖 Leia o Salmo ${x.o.n} completo na sua Bíblia.</p>`:""}${studyHTML(x.o)}</div></div>`).join("")}
 
 /* ====== AJUSTES ====== */
-function setFs(n){S.fs=n;save();applyFs()}
+function setFs(n){S.zi=n;save();applyFs()}
+const ZOOMS=[0.8,0.9,1,1.1,1.2];
+function zoomStep(d){S.zi=Math.max(0,Math.min(ZOOMS.length-1,(S.zi||0)+d));save();applyFs();toast(d>0?"Texto maior":"Texto menor")}
 function setFe(v){S.fe=v;save();applyFs();toast("Pronto! O app foi ajustado para você 🙏")}
-function applyFs(){document.body.classList.remove("fs-1","fs-2");if(S.fs)document.body.classList.add("fs-"+S.fs);
- document.querySelectorAll("#fsbtns button").forEach(b=>b.classList.toggle("on",+b.dataset.fs===(S.fs||0)));
+function applyFs(){document.body.classList.remove("fs-1","fs-2");document.body.style.zoom=ZOOMS[S.zi||0];
+ document.querySelectorAll("#fsbtns button").forEach(b=>b.classList.toggle("on",+b.dataset.fs===(S.zi||0)));
  document.querySelectorAll("#febtns button").forEach(b=>b.classList.toggle("on",b.dataset.fe===(S.fe||"nd")))}
 function acc(b){b.parentNode.classList.toggle("open")}
 
